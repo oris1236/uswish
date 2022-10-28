@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- tag for browser, it's a html file-->
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>如意帳本</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <hr/>
+        <!-- input section -->
+        <div>
+            <table id="mytable" width="500"; style="border:1px solid ;">
+                <tr style="color: blue">
+                    <td>Date</td>
+                    <td>Amount</td>
+                    <td>Memo</td>
+                </tr>
+                <tr>
+                <!--<tr style="background-color:blanchedalmond">-->
+                    <td><input type="date"/></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <!--<input type="radio">10F<input type="radio">13F-->
+            <div id="radio">
+                <label><input id="10F" type="radio" name="label" value="10F" checked="checked"><span class="round button">10F</span></label>
+                <label><input id="13F" type="radio" name="label" value="13F"><span class="round button">13F</span></label>
+            </div>
+            <style>
+            #radio input[type="radio"] {display: none; }
+            #radio input:checked + .button {background: #5e7380; color: #fff; cursor: default; }
+            #radio .button {display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #333; cursor: pointer; }
+            #radio .button:hover {background: #bbb; color: #fff; }
+            #radio .round {border-radius: 5px; }
+            </style>
+            <br/>
+            <button id="btn"
+                    style="background-color: #008CBA;
+                            border:2px solid #008cBA;
+                            padding: 10px 25px;
+                            display: inline-block;
+                            font-size: 16px;">送出</button>
+        </div>
+        <!--report section -->
+        <div id="report">
+        </div>
+        <!--output section -->
+        <div>
+            <script src="input.js"></script>
+        </div>
+        <!--report section -->
+        <div>
+        </div>
+    </body>
+</html>
