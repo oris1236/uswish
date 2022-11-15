@@ -3,57 +3,76 @@
     <head>
         <meta charset="UTF-8"/>
         <title>如意帳本</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <hr/>
+        <form>
         <!-- input section -->
-        <div>
-            <table id="mytable" width="500"; style="border:1px solid ;">
-                <tr style="color: blue">
-                    <td>Date</td>
-                    <td>Amount</td>
-                    <td>Memo</td>
-                </tr>
-                <tr>
-                <!--<tr style="background-color:blanchedalmond">-->
-                    <td><input type="date"/></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
-            </table>
-            
-            <!--<input type="radio">10F<input type="radio">13F-->
+
+            <input type="date" id="date">
+            <br/>
+            <input type="number" id="amount" placeholder="金額">
+            <br/>
+            <input type="text" id="memo" placeholder="註記">
+            <br/>
+            <br/>
             <div id="radio">
                 <label><input id="10F" type="radio" name="label" value="10F" checked="checked"><span class="round button">10F</span></label>
                 <label><input id="13F" type="radio" name="label" value="13F"><span class="round button">13F</span></label>
             </div>
             <style>
-            #radio input[type="radio"] {display: none; }
-            #radio input:checked + .button {background: #5e7380; color: #fff; cursor: default; }
-            #radio .button {display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #333; cursor: pointer; }
-            #radio .button:hover {background: #bbb; color: #fff; }
-            #radio .round {border-radius: 5px; }
+                #radio input[type="radio"] {display: none; }
+                #radio input:checked + .button {background: #F5CBA7; color: #000000; cursor: default; }
+                #radio .button {display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #4D4D4D; cursor: pointer; }
+                #radio .button:hover {background: #FAE5D3 ; color: #000000; }
+                #radio .round {border-radius: 5px; }
             </style>
-            <br/>
+        
             <button id="btn"
-                    style="background-color: #008CBA;
-                            border:2px solid #008cBA;
-                            padding: 10px 25px;
-                            display: inline-block;
-                            font-size: 16px;">送出</button>
-        </div>
-        <!--report section -->
+                    style="background-color: #F0B27A;
+                        border:2px solid #D35400;
+                        padding: 10px 25px;
+                        display: inline-block;
+                        font-size: 20px;
+                        border-radius: 5px;">送出</button>
+
+</form>
         <div id="report">
         </div>
-        <!--output section -->
+    
+        <hr/>
+        <br/>
+        <div id="showradio">
+            <label><input id="show10F" type="radio" name="label" value="10F"><span class="round button">show10F</span></label>
+            <label><input id="show13F" type="radio" name="label" value="13F"><span class="round button">show13F</span></label>
+        </div>
+        <style>
+            #showradio input[type="radio"] {display: none; }
+            #showradio input:checked + .button {background: #EA5858; color: #000000; cursor: default; }
+            #showradio .button {display: inline-block; margin: 0 5px 10px 0; padding: 5px 10px; background: #f7f7f7; color: #4D4D4D; cursor: pointer; }
+            #showradio .button:hover {background: #EA7C7C; color: #000000; }
+            #showradio .round {border-radius: 5px; }
+        </style>
+
+        <div id="tablebody">
+            <table id="thetable">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>金額</th>
+                        <th>註記</th>
+                        <th><button id="btn_delete">刪除</button></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
         <div>
             <script src="input.js"></script>
-        </div>
-        <!--report section -->
-        <div>
         </div>
     </body>
 </html>
